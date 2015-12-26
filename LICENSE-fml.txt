@@ -349,7 +349,7 @@ of these things:
     materials or that you have already sent this user a copy.
 
   For an executable, the required form of the "work that uses the
-Library" must include any data and utility programs needed for
+Library" must include any data and com.blogspot.richardreigens.regrowableleaves.utility programs needed for
 reproducing the executable from it.  However, as a special exception,
 the materials to be distributed need not include anything that is
 normally distributed (in either source or binary form) with the major

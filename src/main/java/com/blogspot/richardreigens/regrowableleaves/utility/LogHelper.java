@@ -1,7 +1,7 @@
-package utility;
+package com.blogspot.richardreigens.regrowableleaves.utility;
 
 
-import com.example.regrowableleaves.reference.Reference;
+import com.blogspot.richardreigens.regrowableleaves.reference.Reference;
 import cpw.mods.fml.common.FMLLog;
 
 
