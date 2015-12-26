@@ -20,7 +20,6 @@ public class EventHandler {
 
         if (e.block == Blocks.leaves) {
             e.world.setBlock(x, y, z, ModBlocks.leafAirBlock);
-            LogHelper.info("Setting Block");
         }
     }
 }
