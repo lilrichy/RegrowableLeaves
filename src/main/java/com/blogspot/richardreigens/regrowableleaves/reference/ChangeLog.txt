@@ -1,0 +1,7 @@
+v1.1
+Leaves now require light to regrow
+Added config option for leaf growth rate
+Added config option for light requirement
+
+v1.0
+Initial Release

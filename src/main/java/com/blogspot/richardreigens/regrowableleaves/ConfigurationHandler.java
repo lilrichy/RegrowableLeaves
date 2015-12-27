@@ -1,0 +1,48 @@
+package com.blogspot.richardreigens.regrowableleaves;
+
+import com.blogspot.richardreigens.regrowableleaves.reference.Reference;
+import cpw.mods.fml.client.event.ConfigChangedEvent;
+import net.minecraftforge.common.config.Configuration;
+
+import java.io.File;
+
+/**
+ * Created by LiLRichy on 12/26/2015.
+ */
+public class ConfigurationHandler
+{
+    public static Configuration configuration;
+
+    public static int leafRegrowthRate;
+    public static int lightRequiredToGrow;
+
+
+    public static void init(File configFile)
+    {
+        //Create config file if none exists
+        if (configuration == null) {
+            configuration = new Configuration(configFile);
+            loadConfiguration();
+        }
+    }
+
+    private static void loadConfiguration()
+    {
+        String GENERAL_SETTINGS = "General Settings";
+
+        leafRegrowthRate = configuration.getInt("leafRegrowthRate", GENERAL_SETTINGS, 3, 0, 10, "Rate that leaves will regrow. Lower number is faster.");
+        lightRequiredToGrow = configuration.getInt("lightRequiredToGrow", GENERAL_SETTINGS,4,0,13, "Light level required for leaves to start regrowing. 0 = no light required.");
+
+        if (configuration.hasChanged()) {
+            configuration.save();
+        }
+    }
+
+    public void onConfigurationChangedEvent(ConfigChangedEvent.OnConfigChangedEvent event)
+    {
+        if (event.modID.equalsIgnoreCase(Reference.MOD_ID)) {
+            //Reload Config
+            loadConfiguration();
+        }
+    }
+}

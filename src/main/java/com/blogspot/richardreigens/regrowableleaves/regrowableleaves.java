@@ -19,6 +19,8 @@ public class regrowableleaves {
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         ModBlocks.init();
+
+        ConfigurationHandler.init(event.getSuggestedConfigurationFile());
         LogHelper.info("Blocks Loading");
     }
 
