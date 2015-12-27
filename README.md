@@ -1,4 +1,4 @@
-# RegrowableLeaves
+# Regrowable Leaves
 Minecraft Mod that slowly regrows leaves on trees.
 
 You are free to use this in any mod pack you want to!
