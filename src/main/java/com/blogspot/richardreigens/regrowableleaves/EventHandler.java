@@ -30,7 +30,7 @@ public class EventHandler {
         if (block == Blocks.leaves) {
             if (player.getCurrentEquippedItem() != null && player.getCurrentEquippedItem().getItem() == Items.shears) {
                 world.spawnEntityInWorld(new EntityItem(world, x, y, z, new ItemStack(block, 1, e.blockMetadata)));
-            }
+            }else  block.harvestBlock(world,player, x, y, z, e.blockMetadata);
 
             world.setBlock(x, y, z, regrowableleaves.blockLeafAir, e.blockMetadata % 4, 3);
             e.setCanceled(true);
@@ -38,7 +38,7 @@ public class EventHandler {
         } else if (block == Blocks.leaves2) {
             if (player.getCurrentEquippedItem() != null && player.getCurrentEquippedItem().getItem() == Items.shears) {
                 world.spawnEntityInWorld(new EntityItem(world, x, y, z, new ItemStack(block, 1, e.blockMetadata)));
-            }
+            }else  block.harvestBlock(world,player, x, y, z, e.blockMetadata);
 
             world.setBlock(x, y, z, regrowableleaves.blockLeafAir, (e.blockMetadata % 4) + 5, 3);
             e.setCanceled(true);

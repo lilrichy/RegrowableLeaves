@@ -1,5 +1,6 @@
 v1.4
 Added check to drop the leaf block when harvested with shears. - Issue: #3
+Leaves should now have normal drops "apples and saplings" when broken without shears.
 
 v1.3
 Code Clean up - sky_01
