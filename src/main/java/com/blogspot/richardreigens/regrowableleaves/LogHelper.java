@@ -2,7 +2,7 @@ package com.blogspot.richardreigens.regrowableleaves;
 
 
 import com.blogspot.richardreigens.regrowableleaves.reference.Reference;
-import cpw.mods.fml.common.FMLLog;
+import net.minecraftforge.fml.common.FMLLog;
 
 
 /**

@@ -2,8 +2,14 @@ package com.blogspot.richardreigens.regrowableleaves.blocks;
 
 
 import com.blogspot.richardreigens.regrowableleaves.ConfigurationHandler;
+import com.blogspot.richardreigens.regrowableleaves.LogHelper;
 import net.minecraft.block.BlockAir;
+import net.minecraft.block.properties.PropertyEnum;
+import net.minecraft.block.state.BlockStateContainer;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.EnumBlockRenderType;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -12,24 +18,49 @@ import java.util.Random;
  * Created by LiLRichy on 12/26/2015.
  */
 public class BlockLeafAir extends BlockAir {
+    public static final PropertyEnum TYPE = PropertyEnum.create("type", BlockProperties.EnumType.class);
     final int META_OFFSET = 5;
 
     public BlockLeafAir() {
         super();
         this.setTickRandomly(true);
-        this.setBlockName("LeafAir");
+        this.setUnlocalizedName("LeafAir");
+        this.setRegistryName("BlockLeafAir");
     }
 
-    public void updateTick(World world, int x, int y, int z, Random random) {
-        if (!world.isRemote) {
+    @Override
+    public EnumBlockRenderType getRenderType(IBlockState state) {
+        return EnumBlockRenderType.MODEL;
+    }
 
-            int metaToSet = world.getBlockMetadata(x, y, z);
+    @Override
+    public IBlockState getStateFromMeta(int meta) {
+        return this.getDefaultState().withProperty(TYPE, BlockProperties.EnumType.byMetadata(meta));
+    }
 
-            if (random.nextInt(10) > ConfigurationHandler.leafRegrowthRate && world.getBlockLightValue(x, y, z) >= ConfigurationHandler.lightRequiredToGrow) {
-                if (metaToSet >= META_OFFSET) {
-                    world.setBlock(x, y, z, Blocks.leaves2, metaToSet - META_OFFSET + 8, 3);
-                } else world.setBlock(x, y, z, Blocks.leaves, metaToSet + 8, 3);
+    @Override
+    public int getMetaFromState(IBlockState state) {
+        return ((BlockProperties.EnumType) state.getValue(TYPE)).getID();
+    }
+
+    @Override
+    protected BlockStateContainer createBlockState() {
+        return new BlockStateContainer(this, TYPE);
+    }
+
+    @Override
+    public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
+        if (!worldIn.isRemote) {
+            LogHelper.info("Ticking");
+            int metaToSet = state.getBlock().getMetaFromState(state);
+
+            if (rand.nextInt(10) > ConfigurationHandler.leafRegrowthRate && worldIn.getLight(pos) >= ConfigurationHandler.lightRequiredToGrow) {
+                if (metaToSet >= META_OFFSET)
+                    worldIn.setBlockState(pos, Blocks.LEAVES2.getStateFromMeta(state.getBlock().getMetaFromState(state) - META_OFFSET + 8));
+                else
+                    worldIn.setBlockState(pos, Blocks.LEAVES.getStateFromMeta(state.getBlock().getMetaFromState(state) + 8));
             }
         }
     }
 }
+

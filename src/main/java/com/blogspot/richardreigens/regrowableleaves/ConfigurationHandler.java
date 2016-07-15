@@ -1,8 +1,8 @@
 package com.blogspot.richardreigens.regrowableleaves;
 
 import com.blogspot.richardreigens.regrowableleaves.reference.Reference;
-import cpw.mods.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 
 import java.io.File;
 
@@ -40,7 +40,7 @@ public class ConfigurationHandler
 
     public void onConfigurationChangedEvent(ConfigChangedEvent.OnConfigChangedEvent event)
     {
-        if (event.modID.equalsIgnoreCase(Reference.MOD_ID)) {
+        if (event.getModID().equalsIgnoreCase(Reference.MOD_ID)) {
             //Reload Config
             loadConfiguration();
         }

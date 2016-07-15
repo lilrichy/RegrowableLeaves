@@ -1,0 +1,25 @@
+0	Oak Leaves
+1	Spruce Leaves
+2	Birch Leaves
+3	Jungle Leaves
+4	Oak Leaves (no decay)
+5	Spruce Leaves (no decay)
+6	Birch Leaves (no decay)
+7	Jungle Leaves (no decay)
+8	Oak Leaves (check decay)
+9	Spruce Leaves (check decay)
+10	Birch Leaves (check decay)
+11	Jungle Leaves (check decay)
+12	Oak Leaves (no decay and check decay)
+13	Spruce Leaves (no decay and check decay)
+14	Birch Leaves (no decay and check decay)
+15	Jungle Leaves (no decay and check decay)
+
+0	Acacia Leaves
+1	Dark Oak Leaves
+4	Acacia Leaves (no decay)
+5	Dark Oak Leaves (no decay)
+8	Acacia Leaves (check decay)
+9	Dark Oak Leaves (check decay)
+12	Acacia Leaves (no decay and check decay)
+13	Dark Oak Leaves (no decay and check decay)
