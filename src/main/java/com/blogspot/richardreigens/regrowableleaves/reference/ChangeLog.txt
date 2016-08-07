@@ -1,4 +1,9 @@
 
+v3.1.1
+Updated to forge 12.18.1.2046
+Fixed Texture bug - derp on my part for leaving in some code I was using for debugging.
+Removed debug text in console.
+
 v3.0
 Initial Release for Minecraft 1.10.2
 

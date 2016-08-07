@@ -2,7 +2,6 @@ package com.blogspot.richardreigens.regrowableleaves.blocks;
 
 
 import com.blogspot.richardreigens.regrowableleaves.ConfigurationHandler;
-import com.blogspot.richardreigens.regrowableleaves.LogHelper;
 import net.minecraft.block.BlockAir;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
@@ -30,7 +29,7 @@ public class BlockLeafAir extends BlockAir {
 
     @Override
     public EnumBlockRenderType getRenderType(IBlockState state) {
-        return EnumBlockRenderType.MODEL;
+        return EnumBlockRenderType.INVISIBLE;
     }
 
     @Override
@@ -51,7 +50,7 @@ public class BlockLeafAir extends BlockAir {
     @Override
     public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
         if (!worldIn.isRemote) {
-            LogHelper.info("Ticking");
+            // LogHelper.info("Ticking");
             int metaToSet = state.getBlock().getMetaFromState(state);
 
             if (rand.nextInt(10) > ConfigurationHandler.leafRegrowthRate && worldIn.getLight(pos) >= ConfigurationHandler.lightRequiredToGrow) {

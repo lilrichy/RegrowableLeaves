@@ -19,12 +19,12 @@ plugins {
     id "net.minecraftforge.gradle.forge" version "2.0.2"
 }
 */
-version = "1.10.2-3.0"
+version = "1.10.2-3.1.1"
 group = "lilrichy.regrowableleaves" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "regrowableleaves"
 
 minecraft {
-    version = "1.10.2-12.18.1.2014"
+    version = "1.10.2-12.18.1.2046"
     runDir = "run"
 
     // the mappings can be changed at any time, and must be in the following format.
