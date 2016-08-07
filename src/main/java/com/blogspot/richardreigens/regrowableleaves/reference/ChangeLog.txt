@@ -1,4 +1,7 @@
 
+v3.1.2
+Updated mcmod.info
+
 v3.1.1
 Updated to forge 12.18.1.2046
 Fixed Texture bug - derp on my part for leaving in some code I was using for debugging.
