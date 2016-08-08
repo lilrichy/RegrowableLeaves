@@ -15,6 +15,7 @@ public class ConfigurationHandler
 
     public static int leafRegrowthRate;
     public static int lightRequiredToGrow;
+    public static boolean debugMode;
 
 
     public static void init(File configFile)
@@ -32,6 +33,7 @@ public class ConfigurationHandler
 
         leafRegrowthRate = configuration.getInt("leafRegrowthRate", GENERAL_SETTINGS, 3, 0, 10, "Rate that leaves will regrow. Lower number is faster.");
         lightRequiredToGrow = configuration.getInt("lightRequiredToGrow", GENERAL_SETTINGS,4,0,13, "Light level required for leaves to start regrowing. 0 = no light required.");
+        debugMode = configuration.getBoolean("debugMode", GENERAL_SETTINGS, false, "Enable this to show blocks and output debug text into console.");
 
         if (configuration.hasChanged()) {
             configuration.save();

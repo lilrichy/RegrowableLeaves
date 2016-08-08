@@ -1,6 +1,8 @@
 
 v3.1.2
+Biome's O Plenty Leaves now supported!!!!!!
 Updated mcmod.info
+Added Debug option to config file so I shouldn't derp anymore while debugging.
 
 v3.1.1
 Updated to forge 12.18.1.2046

@@ -1,7 +1,7 @@
 package com.blogspot.richardreigens.regrowableleaves.blocks;
 
-import net.minecraft.block.Block;
-import net.minecraft.item.ItemBlock;
+import com.blogspot.richardreigens.regrowableleaves.blocks.minecraftLevesBlock.BlockLeafAir;
+import com.blogspot.richardreigens.regrowableleaves.regrowableleaves;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
@@ -12,13 +12,11 @@ public class ModBlocks {
     public static final BlockLeafAir blockLeafAir = new BlockLeafAir();
 
     public static void register() {
-        registerBlock(blockLeafAir);
-    }
+        GameRegistry.register(blockLeafAir);
 
-    private static void registerBlock(Block block) {
-        GameRegistry.register(block);
-        ItemBlock itemBlock = new ItemBlock(block);
-        itemBlock.setRegistryName(block.getRegistryName());
-        GameRegistry.register(itemBlock);
+        //We should only load these blocks if BOP is installed:
+        if (regrowableleaves.isBOPInstalled) {
+            ModBOPBlocks.register();
+        }
     }
 }

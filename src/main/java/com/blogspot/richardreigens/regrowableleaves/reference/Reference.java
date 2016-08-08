@@ -7,6 +7,6 @@ public class Reference {
 
     public static final String MOD_NAME = "Regrowable Leaves";
     public static final String MOD_ID = "regrowableleaves";
-    public static final String MOD_VERSION = "1.10.2-3.1.1";
+    public static final String MOD_VERSION = "1.10.2-3.1.2";
 
 }

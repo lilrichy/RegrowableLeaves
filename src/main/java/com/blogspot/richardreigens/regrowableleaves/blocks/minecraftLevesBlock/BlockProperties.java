@@ -1,4 +1,4 @@
-package com.blogspot.richardreigens.regrowableleaves.blocks;
+package com.blogspot.richardreigens.regrowableleaves.blocks.minecraftLevesBlock;
 
 import net.minecraft.util.IStringSerializable;
 
