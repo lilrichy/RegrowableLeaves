@@ -37,8 +37,9 @@ public class EventHandler {
                 LogHelper.info("State from Meta: " + state.getBlock().getMetaFromState(state));
             }
 
-            if (player.getHeldItemMainhand() == null || player.getHeldItemMainhand().getItem() != Items.SHEARS) {
+            if (player.getHeldItemMainhand().isEmpty() || player.getHeldItemMainhand().getItem() != Items.SHEARS) {
                 //Minecraft Leaves
+            	// TODO: consider converting "== Blocks.LEAVES" to "instanceof BlockLeavesBase"
                 if (block == Blocks.LEAVES) {
                     if (ConfigurationHandler.debugMode) LogHelper.info("Minecraft leaves");
                     block.harvestBlock(world, player, pos, state, null, ItemStack.EMPTY);
