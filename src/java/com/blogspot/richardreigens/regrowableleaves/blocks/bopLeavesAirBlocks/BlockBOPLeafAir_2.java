@@ -19,7 +19,7 @@ import java.util.Random;
  * Created by LiLRichy on 12/26/2015.
  */
 public class BlockBOPLeafAir_2 extends BlockAir {
-    public static final PropertyEnum TYPE = PropertyEnum.create("type", BOPPage_2.EnumType.class);
+    public static final PropertyEnum<BOPPage_2.EnumType> TYPE = PropertyEnum.create("type", BOPPage_2.EnumType.class);
 
     public BlockBOPLeafAir_2() {
         super();
@@ -28,7 +28,6 @@ public class BlockBOPLeafAir_2 extends BlockAir {
         this.setRegistryName("BlockBOPLeafAir_2");
     }
 
-    @SuppressWarnings("deprecation")
     @Override
     public IBlockState getStateFromMeta(int meta) {
         return this.getDefaultState().withProperty(TYPE, BOPPage_2.EnumType.byMetadata(meta));

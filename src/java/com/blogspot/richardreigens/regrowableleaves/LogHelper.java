@@ -3,10 +3,8 @@ package com.blogspot.richardreigens.regrowableleaves;
 
 import org.apache.logging.log4j.Logger;
 
-import com.blogspot.richardreigens.regrowableleaves.reference.Reference;
-
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 
 /**

@@ -1,7 +1,6 @@
 package com.blogspot.richardreigens.regrowableleaves.blocks;
 
 import com.blogspot.richardreigens.regrowableleaves.blocks.minecraftLevesBlock.BlockLeafAir;
-import com.blogspot.richardreigens.regrowableleaves.regrowableleaves;
 
 import net.minecraft.block.Block;
 import net.minecraftforge.event.RegistryEvent;

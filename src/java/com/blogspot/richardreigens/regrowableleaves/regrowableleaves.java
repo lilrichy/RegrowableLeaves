@@ -1,6 +1,5 @@
 package com.blogspot.richardreigens.regrowableleaves;
 
-import com.blogspot.richardreigens.regrowableleaves.blocks.ModBlocks;
 import com.blogspot.richardreigens.regrowableleaves.reference.Reference;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Loader;

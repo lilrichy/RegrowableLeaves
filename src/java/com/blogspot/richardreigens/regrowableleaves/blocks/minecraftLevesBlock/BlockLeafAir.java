@@ -18,7 +18,7 @@ import java.util.Random;
  * Created by LiLRichy on 12/26/2015.
  */
 public class BlockLeafAir extends BlockAir {
-    public static final PropertyEnum TYPE = PropertyEnum.create("type", BlockProperties.EnumType.class);
+    public static final PropertyEnum<BlockProperties.EnumType> TYPE = PropertyEnum.create("type", BlockProperties.EnumType.class);
     final int META_OFFSET = 5;
 
     public BlockLeafAir() {
@@ -36,7 +36,6 @@ public class BlockLeafAir extends BlockAir {
             return EnumBlockRenderType.INVISIBLE;
     }
 
-    @SuppressWarnings("deprecation")
     @Override
     public IBlockState getStateFromMeta(int meta) {
         return this.getDefaultState().withProperty(TYPE, BlockProperties.EnumType.byMetadata(meta));
