@@ -1,27 +1,12 @@
 package com.blogspot.richardreigens.regrowableleaves;
 
-
-import org.apache.logging.log4j.Logger;
-
-import net.minecraftforge.fml.common.Mod.EventHandler;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-
-
 /**
  * Created by Rich on 11/19/2015.
  */
 public class LogHelper {
-	
-	public static Logger logger;
-	
-	@EventHandler
-	public void preInit(FMLPreInitializationEvent event)
-	{
-	    logger = event.getModLog();
-	}
-	
+		
     public static void log(org.apache.logging.log4j.Level logLevel, Object object) {
-        logger.log(logLevel, String.valueOf(object));
+        regrowableleaves.logger.log(logLevel, String.valueOf(object));
     }
 
     public static void all(Object object) {

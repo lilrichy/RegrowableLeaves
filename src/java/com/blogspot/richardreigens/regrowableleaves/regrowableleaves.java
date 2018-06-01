@@ -1,6 +1,9 @@
 package com.blogspot.richardreigens.regrowableleaves;
 
+import org.apache.logging.log4j.Logger;
+
 import com.blogspot.richardreigens.regrowableleaves.reference.Reference;
+
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
@@ -14,9 +17,11 @@ public class regrowableleaves {
     @Mod.Instance(Reference.MOD_ID)
     public static regrowableleaves instance;
     public static boolean isBOPInstalled;
+	public static Logger logger;
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
+    	logger = event.getModLog();
     }
 
     @EventHandler
