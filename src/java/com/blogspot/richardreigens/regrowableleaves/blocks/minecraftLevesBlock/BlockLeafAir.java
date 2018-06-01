@@ -30,7 +30,7 @@ public class BlockLeafAir extends BlockAir {
 
     @Override
     public EnumBlockRenderType getRenderType(IBlockState state) {
-        if (ConfigurationHandler.debugMode)
+        if (ConfigurationHandler.generalSettings.debugMode)
             return EnumBlockRenderType.MODEL;
         else
             return EnumBlockRenderType.INVISIBLE;
@@ -56,8 +56,8 @@ public class BlockLeafAir extends BlockAir {
     public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
         if (!worldIn.isRemote) {
             int metaToSet = state.getBlock().getMetaFromState(state);
-            if (rand.nextInt(10) > ConfigurationHandler.leafRegrowthRate && worldIn.getLight(pos) >= ConfigurationHandler.lightRequiredToGrow) {
-                if (ConfigurationHandler.debugMode) LogHelper.info("BlockLeafAir Tick");
+            if (rand.nextInt(10) > ConfigurationHandler.generalSettings.leafRegrowthRate && worldIn.getLight(pos) >= ConfigurationHandler.generalSettings.lightRequiredToGrow) {
+                if (ConfigurationHandler.generalSettings.debugMode) LogHelper.info("BlockLeafAir Tick");
                 if (metaToSet >= META_OFFSET)
                     worldIn.setBlockState(pos, Blocks.LEAVES2.getStateFromMeta(state.getBlock().getMetaFromState(state) - META_OFFSET + 8));
                 else

@@ -45,7 +45,7 @@ public class BlockBOPLeafAir_3 extends BlockAir {
 
     @Override
     public EnumBlockRenderType getRenderType(IBlockState state) {
-        if (ConfigurationHandler.debugMode)
+        if (ConfigurationHandler.generalSettings.debugMode)
             return EnumBlockRenderType.MODEL;
         else
             return EnumBlockRenderType.INVISIBLE;
@@ -55,8 +55,8 @@ public class BlockBOPLeafAir_3 extends BlockAir {
     @Override
     public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
         if (!worldIn.isRemote) {
-            if (rand.nextInt(10) > ConfigurationHandler.leafRegrowthRate && worldIn.getLight(pos) >= ConfigurationHandler.lightRequiredToGrow) {
-                if (ConfigurationHandler.debugMode) LogHelper.info("BlockBOPLeafAir_3 Tick");
+            if (rand.nextInt(10) > ConfigurationHandler.generalSettings.leafRegrowthRate && worldIn.getLight(pos) >= ConfigurationHandler.generalSettings.lightRequiredToGrow) {
+                if (ConfigurationHandler.generalSettings.debugMode) LogHelper.info("BlockBOPLeafAir_3 Tick");
                 worldIn.setBlockState(pos, BOPBlocks.leaves_3.getStateFromMeta(state.getBlock().getMetaFromState(state) + 8));
             }
         }

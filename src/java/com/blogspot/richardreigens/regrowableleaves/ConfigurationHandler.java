@@ -1,50 +1,55 @@
 package com.blogspot.richardreigens.regrowableleaves;
 
 import com.blogspot.richardreigens.regrowableleaves.reference.Reference;
-import net.minecraftforge.common.config.Configuration;
-import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 
-import java.io.File;
+import net.minecraftforge.common.config.Config;
+import net.minecraftforge.common.config.Config.Name;
+import net.minecraftforge.common.config.Config.RangeInt;
+import net.minecraftforge.common.config.ConfigManager;
+import net.minecraftforge.fml.client.event.ConfigChangedEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 /**
  * Created by LiLRichy on 12/26/2015.
  */
+@Config(modid = Reference.MOD_ID)
 public class ConfigurationHandler
 {
-    public static Configuration configuration;
+	@Name("General Settings")
+    @Config.Comment("General regrow settings")
+    public static final GeneralSettings generalSettings = new GeneralSettings();
 
-    public static int leafRegrowthRate;
-    public static int lightRequiredToGrow;
-    public static boolean debugMode;
-
-
-    public static void init(File configFile)
+    public static class GeneralSettings
     {
-        //Create config file if none exists
-        if (configuration == null) {
-            configuration = new Configuration(configFile);
-            loadConfiguration();
-        }
+    	@Name("Leaf regrow rate")
+        @Config.Comment("Rate that leaves will regrow. Lower number is faster.")
+    	@RangeInt(min = 0, max = 10)
+        public int leafRegrowthRate = 3;  // 0-10
+
+    	@Name("Light required to grow")
+        @Config.Comment("Light level required for leaves to start regrowing. 0 = no light required.")
+    	@RangeInt(min = 0, max = 13)
+        public int lightRequiredToGrow = 4; // 0-13
+        
+    	@Name("Debug mode")
+        @Config.Comment("Enable this to show blocks and output debug text into console.")
+        public boolean debugMode = false;
     }
 
-    private static void loadConfiguration()
-    {
-        String GENERAL_SETTINGS = "General Settings";
-
-        leafRegrowthRate = configuration.getInt("leafRegrowthRate", GENERAL_SETTINGS, 3, 0, 10, "Rate that leaves will regrow. Lower number is faster.");
-        lightRequiredToGrow = configuration.getInt("lightRequiredToGrow", GENERAL_SETTINGS,4,0,13, "Light level required for leaves to start regrowing. 0 = no light required.");
-        debugMode = configuration.getBoolean("debugMode", GENERAL_SETTINGS, false, "Enable this to show blocks and output debug text into console.");
-
-        if (configuration.hasChanged()) {
-            configuration.save();
-        }
-    }
-
-    public void onConfigurationChangedEvent(ConfigChangedEvent.OnConfigChangedEvent event)
-    {
-        if (event.getModID().equalsIgnoreCase(Reference.MOD_ID)) {
-            //Reload Config
-            loadConfiguration();
-        }
-    }
+    @Mod.EventBusSubscriber(modid = Reference.MOD_ID)
+	private static class EventHandler {
+		/**
+		 * Inject the new values and save to the config file when the config has been changed from the GUI.
+		 *
+		 * @param event The event
+		 */
+		@SubscribeEvent
+		public static void onConfigChanged(final ConfigChangedEvent.OnConfigChangedEvent event) {
+			if (event.getModID().equals(Reference.MOD_ID)) {
+				ConfigManager.sync(Reference.MOD_ID, Config.Type.INSTANCE);
+			}
+		}
+	}
+    
 }

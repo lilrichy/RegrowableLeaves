@@ -17,7 +17,6 @@ public class regrowableleaves {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        ConfigurationHandler.init(event.getSuggestedConfigurationFile());
     }
 
     @EventHandler
