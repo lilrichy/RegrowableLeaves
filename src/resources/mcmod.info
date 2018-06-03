@@ -8,8 +8,8 @@
   "url": "https://github.com/lilrichy/RegrowableLeaves",
   "updateUrl": "",
   "authorList": ["LiLRichy"],
-  "credits": "Exkaliberdubstep for the main mod idea, bvanseghi for the invisible block idea, sky_01 for testing and coding help, Stormwind99 for updating.",
-  "logoFile": "./logo.png",
+  "credits": "Exkaliberdubstep for the main mod idea, bvanseghi for the invisible block idea, sky_01 for testing and coding help, Stormwind99 for updating to MC 1.12.2.",
+  "logoFile": "logo.png",
   "screenshots": [],
   "dependencies": []
 }
