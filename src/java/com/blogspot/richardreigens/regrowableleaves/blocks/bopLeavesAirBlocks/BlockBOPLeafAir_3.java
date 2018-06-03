@@ -35,7 +35,7 @@ public class BlockBOPLeafAir_3 extends BlockAir {
 
     @Override
     public int getMetaFromState(IBlockState state) {
-        return ((BOPPage_3.EnumType) state.getValue(TYPE)).getID();
+        return state.getValue(TYPE).getID();
     }
 
     @Override

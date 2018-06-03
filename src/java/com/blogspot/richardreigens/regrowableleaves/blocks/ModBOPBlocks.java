@@ -1,13 +1,7 @@
 package com.blogspot.richardreigens.regrowableleaves.blocks;
 
+import com.blogspot.richardreigens.regrowableleaves.blocks.bopLeavesAirBlocks.*;
 import com.blogspot.richardreigens.regrowableleaves.regrowableleaves;
-import com.blogspot.richardreigens.regrowableleaves.blocks.bopLeavesAirBlocks.BlockBOPLeafAir_0;
-import com.blogspot.richardreigens.regrowableleaves.blocks.bopLeavesAirBlocks.BlockBOPLeafAir_1;
-import com.blogspot.richardreigens.regrowableleaves.blocks.bopLeavesAirBlocks.BlockBOPLeafAir_2;
-import com.blogspot.richardreigens.regrowableleaves.blocks.bopLeavesAirBlocks.BlockBOPLeafAir_3;
-import com.blogspot.richardreigens.regrowableleaves.blocks.bopLeavesAirBlocks.BlockBOPLeafAir_4;
-import com.blogspot.richardreigens.regrowableleaves.blocks.bopLeavesAirBlocks.BlockBOPLeafAir_5;
-
 import net.minecraft.block.Block;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;

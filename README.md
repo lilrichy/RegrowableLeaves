@@ -16,5 +16,3 @@ They will not regrow when the tree is cut down only if a player breaks the actua
 This works by placing an invisible block in the place of the original leaf block. If any other block is placed over this the leaf will not regrow.
 
 There is Config options to change the regrowth rate and light requirement.
-
-

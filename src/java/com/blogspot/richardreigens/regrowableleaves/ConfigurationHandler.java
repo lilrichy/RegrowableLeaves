@@ -1,7 +1,6 @@
 package com.blogspot.richardreigens.regrowableleaves;
 
 import com.blogspot.richardreigens.regrowableleaves.reference.Reference;
-
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.Config.Name;
 import net.minecraftforge.common.config.Config.RangeInt;

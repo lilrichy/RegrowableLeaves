@@ -1,7 +1,7 @@
 package com.blogspot.richardreigens.regrowableleaves.reference;
 
 /**
- * Created by richa on 12/26/2015.
+ * Created by LiLRichy on 12/26/2015.
  */
 public class Reference {
 

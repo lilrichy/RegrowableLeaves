@@ -1,7 +1,7 @@
 package com.blogspot.richardreigens.regrowableleaves;
 
 /**
- * Created by Rich on 11/19/2015.
+ * Created by LiLRichy on 11/19/2015.
  */
 public class LogHelper {
 		
