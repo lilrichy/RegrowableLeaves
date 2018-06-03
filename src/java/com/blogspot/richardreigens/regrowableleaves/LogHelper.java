@@ -1,16 +1,12 @@
 package com.blogspot.richardreigens.regrowableleaves;
 
-
-import com.blogspot.richardreigens.regrowableleaves.reference.Reference;
-import net.minecraftforge.fml.common.FMLLog;
-
-
 /**
  * Created by Rich on 11/19/2015.
  */
 public class LogHelper {
+		
     public static void log(org.apache.logging.log4j.Level logLevel, Object object) {
-        FMLLog.log(Reference.MOD_NAME, logLevel, String.valueOf(object));
+        regrowableleaves.logger.log(logLevel, String.valueOf(object));
     }
 
     public static void all(Object object) {

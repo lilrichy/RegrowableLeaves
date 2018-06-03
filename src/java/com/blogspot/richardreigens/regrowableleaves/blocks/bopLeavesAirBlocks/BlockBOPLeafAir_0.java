@@ -4,7 +4,7 @@ package com.blogspot.richardreigens.regrowableleaves.blocks.bopLeavesAirBlocks;
 import biomesoplenty.api.block.BOPBlocks;
 import com.blogspot.richardreigens.regrowableleaves.ConfigurationHandler;
 import com.blogspot.richardreigens.regrowableleaves.LogHelper;
-import com.blogspot.richardreigens.regrowableleaves.blocks.bopLeavesPages.BOPPage_1;
+import com.blogspot.richardreigens.regrowableleaves.blocks.bopLeavesPages.BOPPage_0;
 import net.minecraft.block.BlockAir;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
@@ -18,25 +18,24 @@ import java.util.Random;
 /**
  * Created by LiLRichy on 12/26/2015.
  */
-public class BlockBOPLeafAir_1 extends BlockAir {
-    public static final PropertyEnum TYPE = PropertyEnum.create("type", BOPPage_1.EnumType.class);
+public class BlockBOPLeafAir_0 extends BlockAir {
+    public static final PropertyEnum<BOPPage_0.EnumType> TYPE = PropertyEnum.create("type", BOPPage_0.EnumType.class);
 
-    public BlockBOPLeafAir_1() {
+    public BlockBOPLeafAir_0() {
         super();
         this.setTickRandomly(true);
-        this.setUnlocalizedName("BOPLeafAir_1");
-        this.setRegistryName("BlockBOPLeafAir_1");
+        this.setUnlocalizedName("BOPLeafAir_0");
+        this.setRegistryName("BlockBOPLeafAir_0");
     }
 
-    @SuppressWarnings("deprecation")
     @Override
     public IBlockState getStateFromMeta(int meta) {
-        return this.getDefaultState().withProperty(TYPE, BOPPage_1.EnumType.byMetadata(meta));
+        return this.getDefaultState().withProperty(TYPE, BOPPage_0.EnumType.byMetadata(meta));
     }
 
     @Override
     public int getMetaFromState(IBlockState state) {
-        return ((BOPPage_1.EnumType) state.getValue(TYPE)).getID();
+        return ((BOPPage_0.EnumType) state.getValue(TYPE)).getID();
     }
 
     @Override
@@ -46,7 +45,7 @@ public class BlockBOPLeafAir_1 extends BlockAir {
 
     @Override
     public EnumBlockRenderType getRenderType(IBlockState state) {
-        if (ConfigurationHandler.debugMode)
+        if (ConfigurationHandler.generalSettings.debugMode)
             return EnumBlockRenderType.MODEL;
         else
             return EnumBlockRenderType.INVISIBLE;
@@ -56,9 +55,9 @@ public class BlockBOPLeafAir_1 extends BlockAir {
     @Override
     public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
         if (!worldIn.isRemote) {
-            if (rand.nextInt(10) > ConfigurationHandler.leafRegrowthRate && worldIn.getLight(pos) >= ConfigurationHandler.lightRequiredToGrow) {
-                if (ConfigurationHandler.debugMode) LogHelper.info("BlockBOPLeafAir_1 Tick");
-                worldIn.setBlockState(pos, BOPBlocks.leaves_1.getStateFromMeta(state.getBlock().getMetaFromState(state) + 8));
+            if (rand.nextInt(10) > ConfigurationHandler.generalSettings.leafRegrowthRate && worldIn.getLight(pos) >= ConfigurationHandler.generalSettings.lightRequiredToGrow) {
+                if (ConfigurationHandler.generalSettings.debugMode) LogHelper.info("BlockBOPLeafAir_0 Tick");
+                worldIn.setBlockState(pos, BOPBlocks.leaves_0.getStateFromMeta(state.getBlock().getMetaFromState(state) + 8));
             }
         }
     }

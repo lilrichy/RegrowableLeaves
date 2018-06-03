@@ -1,0 +1,26 @@
+{
+  "homepage": "https://github.com/lilrichy/RegrowableLeaves",
+  "promos": {
+    "1.12.2-latest": "4.0.0",
+    "1.12.2-recommended": "4.0.0",
+    "1.10.2-latest": "3.1.2",
+    "1.10.2-recommended": "3.1.2",
+    "1.7.10-latest": "1.4",
+    "1.7.10-recommended": "1.4"
+  },
+  "1.12.2": {
+    "4.0.0": "Ported to MC 1.12.2"
+  },
+  "1.10.2": {
+    "3.1.2": "Biomes O Plenty Leaves now supported!!!!!!\nUpdated mcmod.info\n Added Debug option to config file so I shouldn't derp anymore while debugging.",
+    "3.1.1": "Updated to forge 12.18.1.2046\nFixed Texture bug - derp on my part for leaving in some code I was using for debugging.\nRemoved debug text in console.\nFixed erasing filled maps beyond Map #0",
+    "3.0.0": "Port to Minecraft 1.10.2"
+  },
+  "1.7.10": {
+    "1.4": "Added check to drop the leaf block when harvested with shears. - Issue: #3\nLeaves should now have normal drops \"apples and saplings\" when broken without shears.",
+    "1.3": "Code Clean up - sky_01",
+    "1.2": "Some code clean up - got rid of unneeded files.\nLeaves should now be replaced with the same type that was broken & Removed extra air blocks - Thanks sky_01!\nNew leaves will be placed in \"decay check\" state so they should decay if they are no longer connected to a tree.",
+    "1.1": "Leaves now require light to regrow\nAdded config option for leaf growth rate\nAdded config option for light requirement",
+    "1.0": "Initial Release"
+  }
+}

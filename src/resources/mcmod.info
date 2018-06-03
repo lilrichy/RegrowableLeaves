@@ -5,11 +5,11 @@
   "description": "Leaves slowly regrow when broken by a player.",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "",
+  "url": "https://github.com/lilrichy/RegrowableLeaves",
   "updateUrl": "",
   "authorList": ["LiLRichy"],
-  "credits": "Exkaliberdubstep for the main mod idea, bvanseghi for the invisible block idea, & sky_01 for testing and coding help.",
-  "logoFile": "",
+  "credits": "Exkaliberdubstep for the main mod idea, bvanseghi for the invisible block idea, sky_01 for testing and coding help, Stormwind99 for updating.",
+  "logoFile": "./logo.png",
   "screenshots": [],
   "dependencies": []
 }
